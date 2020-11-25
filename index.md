@@ -32,8 +32,7 @@ body{
 }
 
 .hours {
-  background: #eeeeee;
-  color: #183059;
+  background: #7F669B;
 }
 
 .minutes {
