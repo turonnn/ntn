@@ -1,37 +1,134 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
+    <title>Document</title>
+    <style>
 
-You can use the [editor on GitHub](https://github.com/turonnn/ntn/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+body{
+    background-color: white;
+}
+  
+#timer {
+  color: #eeeeee;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: .7em;
+  letter-spacing: 5px;
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+.days, .hours, .minutes, .seconds {
+  display: inline-block;
+  padding: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
 
-### Markdown
+.days {
+  background: #EF2F3C;
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+.hours {
+  background: #eeeeee;
+  color: #183059;
+}
 
-```markdown
-Syntax highlighted code block
+.minutes {
+  background: #276FBF;
+}
 
-# Header 1
-## Header 2
-### Header 3
+.seconds {
+  background: #F0A202;
+}
 
-- Bulleted
-- List
+.numbers {
+  font-family: 'Montserrat', sans-serif;
+  color:  #183059;
+  font-size: 4em;
+  text-align: center;
+}
 
-1. Numbered
-2. List
+.white {
+  position: absolute;
+  background:  #eeeeee;
+  height: 85px;
+  width: 75px;
+  left: 30%;
+  top: 2%;
+}
 
-**Bold** and _Italic_ and `Code` text
+.red {
+  position: absolute;
+  background:  #EF2F3C;
+  left: 18%;
+  top: 9%;
+  height: 65px;
+  width: 70px;
+ 
+}
 
-[Link](url) and ![Image](src)
-```
+.blue {
+  position: absolute;
+  background:  #276FBF;
+  height: 80px;
+  width: 80px;
+  left: 60%;
+  top: 5%;
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+}
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/turonnn/ntn/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+    </style>
+</head>
+<body>
+    
+<div id="timer">
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    <div class="days"> 
+        <div id="days" class="numbers "> </div>days</div> 
+      <div class="hours"> 
+        <div  id="hours" class="numbers"> </div>hours</div> 
+      <div class="minutes"> 
+        <div  id="minutes" class="numbers"> </div>minutes</div> 
+      <div   class="seconds"> 
+        <div id="seconds" class="numbers"> </div>seconds</div> 
+      </div>
+
+</div>
+
+</body>
+<script>
+    const year = new Date().getFullYear();
+const myDate = new Date('Oct 15, 2020 00:00:00');
+console.log(myDate);
+
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+
+  // get the difference
+  const diff = myDate - today;
+
+  // math
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // display
+  document.getElementById("days").innerHTML=days
+  document.getElementById("hours").innerHTML=hours
+  document.getElementById("minutes").innerHTML=minutes
+  document.getElementById("seconds").innerHTML=seconds
+
+
+
+}, 1);
+</script>
+</html>
