@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,24 +27,24 @@ body{
 }
 
 .days {
-  background: #EF2F3C;
+  background: #75BDEO;
 }
 
 .hours {
-  background: #7F669B;
+  background: #F8D49B;
 }
 
 .minutes {
-  background: #276FBF;
+  background: #F8BC9B;
 }
 
 .seconds {
-  background: #F0A202;
+  background: #F89B9B;
 }
 
 .numbers {
   font-family: 'Montserrat', sans-serif;
-  color:  #183059;
+  color:  #eeeeee;
   font-size: 4em;
   text-align: center;
 }
@@ -59,9 +58,9 @@ body{
   top: 2%;
 }
 
-.red {
+.blue {
   position: absolute;
-  background:  #EF2F3C;
+  background:  #75BDEO;
   left: 18%;
   top: 9%;
   height: 65px;
@@ -69,9 +68,29 @@ body{
  
 }
 
-.blue {
+.yellow {
   position: absolute;
-  background:  #276FBF;
+  background:  #F8D49B;
+  height: 80px;
+  width: 80px;
+  left: 60%;
+  top: 5%;
+  
+}
+
+.orange {
+  position: absolute;
+  background:  #F8BC9B;
+  height: 80px;
+  width: 80px;
+  left: 60%;
+  top: 5%;
+ 
+ }
+
+.pink {
+  position: absolute;
+  background:  #F89B9B;
   height: 80px;
   width: 80px;
   left: 60%;
@@ -102,7 +121,7 @@ body{
 </body>
 <script>
     const year = new Date().getFullYear();
-const myDate = new Date('Oct 15, 2020 00:00:00');
+const myDate = new Date('Feb 10, 2021 00:00:00');
 console.log(myDate);
 
 // countdown
